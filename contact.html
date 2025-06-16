@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Contact Aluminium Works for professional aluminium fabrication and installation services. Get a free quote today."
+    />
+    <meta
+      name="keywords"
+      content="contact aluminium works, aluminium fabrication quote, aluminium installation inquiry"
+    />
+    <meta property="og:title" content="Contact Aluminium Works" />
+    <meta
+      property="og:description"
+      content="Reach out to Aluminium Works for your aluminium fabrication and installation needs."
+    />
+    <meta property="og:image" content="logo.png" />
+    <meta property="og:url" content="https://www.aluminiumworks.com/contact" />
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap"
+      rel="stylesheet"
+    />
+        <script src="./js/home.js"></script>
+
+    <title>Contact Aluminium Works</title>
+  </head>
+  <body>
+    <header class="top-bar">
+      <div class="contact-info">
+        <a href="tel:+92 333 4854858" aria-label="Call +92 333 3515910"
+          >+92 333 4854858</a
+        >
+        |
+        <a href="tel:+92 333 4854858" aria-label="Call +92 336 8736901"
+          >+92 333 4854858</a
+        >
+      </div>
+    </header>
+    <nav class="navbar sticky">
+      <div class="nav-container">
+      <a href="index.html" class="logo">
+          <img
+            src="https://img.freepik.com/premium-vector/black-glossy-geometrical-letter-vector-illustration_95164-3077.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
+            alt="Aluminium Works Logo"
+            width="120"
+          />
+        </a>
+        <button
+          class="hamburger"
+          aria-label="Toggle navigation menu"
+          aria-expanded="false"
+        >
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </div>
+    </nav>
+    <section class="contact-cta">
+      <div class="container contact-content">
+        <h1>Contact Us</h1>
+        <p>
+          Ready to start your aluminium project? Fill out the form below or reach
+          out directly for a free quote.
+        </p>
+        <div class="contact-grid">
+          <div class="contact-form">
+            <form
+              action="/submit-contact"
+              method="POST"
+              aria-label="Contact Form"
+            >
+              <label for="name">Name</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                placeholder="Your Name"
+                aria-required="true"
+              />
+              <label for="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                placeholder="Your Email"
+                aria-required="true"
+              />
+              <label for="phone">Phone</label>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Your Phone"
+                aria-describedby="phone-desc"
+              />
+              <p id="phone-desc" class="sr-only">
+                Optional phone number for faster contact.
+              </p>
+              <label for="message">Message</label>
+              <textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Your Message"
+                rows="5"
+                aria-required="true"
+              ></textarea>
+              <button type="submit" class="cta-button">Send Message</button>
+            </form>
+          </div>
+          <div class="contact-details">
+            <h3>Get in Touch</h3>
+            <p>
+              <a href="tel:+92 333 4854858">+92 333 4854858</a> |
+              <a href="tel:+92 333 4854858">+92 333 4854858</a>
+            </p>
+            <p>
+              Email:
+              <a href="mailto:info@aluminiumworks.com"
+                >info@aluminiumworks.com</a
+              >
+            </p>
+            <p>Address: [Your Address], [Your City]</p>
+            <div class="map-placeholder">
+              <img
+                src="https://img.freepik.com/free-vector/flat-design-location-pin-background_23-2149493458.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
+                alt="Map Placeholder"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="footer">
+      <div class="container footer-content">
+        <div class="footer-contact">
+          <h3>Contact Us</h3>
+          <p>
+            <a href="tel:+92 333 4854858">+92 333 4854858</a> |
+            <a href="tel:+92 333 4854858">+92 333 4854858</a>
+          </p>
+          <p>
+            Email:
+            <a href="mailto:info@aluminiumworks.com">info@aluminiumworks.com</a>
+          </p>
+        </div>
+        <div class="footer-links">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+      <p class="footer-copy">© 2025 Aluminium Works. All rights reserved.</p>
+    </footer>
+    <script src="./js/script.js"></script>
+  </body>
+</html>

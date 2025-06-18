@@ -42,16 +42,16 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Contact Aluminium Works for your aluminium fabrication needs." />
-  <meta name="keywords" content="aluminium works, contact, aluminium fabrication" />
-  <meta property="og:title" content="Contact Aluminium Works" />
-  <meta property="og:description" content="Get in touch for a free quote on aluminium fabrication and installation." />
-  <meta property="og:image" content="logo.png" />
-  <meta property="og:url" content="https://www.aluminiumworks.com/contact.html" />
+  <meta name="description" content="Custom Aluminium Doors - Aluminium Works Portfolio Project" />
+  <meta name="keywords" content="aluminium doors, custom doors, aluminium works, portfolio" />
+  <meta property="og:title" content="Custom Aluminium Doors - Aluminium Works" />
+  <meta property="og:description" content="Explore our bespoke aluminium doors for a luxury residence in Karachi." />
+  <meta property="og:image" content="https://img.freepik.com/free-photo/ai-generated-modern-styled-entryway_23-2150692301.jpg" />
+  <meta property="og:url" content="https://www.aluminiumworks.com/custom-doors.html" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="./home.css" />
-  <title>Contact Aluminium Works</title>
+  <title>Custom Aluminium Doors - Aluminium Works</title>
 </head>
 <body>
   <header class="top-bar">
@@ -75,38 +75,46 @@
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
         <li><a href="services.html">Services</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="portfolio.html" class="active">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
       </ul>
     </div>
   </nav>
   <main>
-    <section class="contact">
-      <div class="contact-content">
-        <div class="contact-form">
-          <h2>Contact Us</h2>
-          <p>Ready to start your aluminium project? Fill out the form below or reach out directly for a free quote.</p>
-          <div>
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required />
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required />
-            <label for="phone">Phone <span>(Optional)</span></label>
-            <input type="tel" id="phone" name="phone" />
-            <label for="message">Message</label>
-            <textarea id="message" name="message" required></textarea>
-            <button id="submit-contact" class="cta-button">Send Message</button>
+    <section class="hero">
+      <div class="hero-content">
+        <h1>Custom Aluminium Doors</h1>
+        <p>Bespoke aluminium doors for a luxury residence in Karachi.</p>
+      </div>
+    </section>
+    <section class="project-details">
+      <div class="services-content">
+        <h2>Project Overview</h2>
+        <p>
+          This project featured the creation of bespoke aluminium doors for a high-end residential property in Karachi. The doors were designed to provide robust security while maintaining an elegant, modern aesthetic that complemented the home’s luxury design.
+        </p>
+        <h3>Key Features</h3>
+        <ul>
+          <li>Reinforced aluminium frames for enhanced security.</li>
+          <li>Custom glass inserts for a sophisticated look.</li>
+          <li>Anti-corrosion coatings for durability.</li>
+          <li>Ergonomic handles and advanced locking systems.</li>
+        </ul>
+        <h3>Client Testimonial</h3>
+        <div class="testimonial-item">
+          <p>"The custom doors are stunning and secure. Aluminium Works made our vision a reality!"</p>
+          <h4>- Ahmed, Homeowner in Karachi</h4>
+        </div>
+        <h3>Project Gallery</h3>
+        <div class="portfolio-grid">
+          <div class="portfolio-item">
+            <img src="https://img.freepik.com/free-photo/ai-generated-modern-styled-entryway_23-2150692301.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Custom Aluminium Doors" />
+          </div>
+          <div class="portfolio-item">
+            <img src="https://img.freepik.com/free-photo/ai-generated-modern-styled-entryway_23-2150692301.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Custom Aluminium Doors" />
           </div>
         </div>
-        <div class="contact-details">
-          <h3>Get in Touch</h3>
-          <p>
-            <a href="tel:+923334854858">+92 333 4854858</a> |
-            <a href="tel:+923334854858">+92 333 4854858</a>
-          </p>
-          <p>Email: <a href="mailto:info@aluminiumworks.com">info@aluminiumworks.com</a></p>
-          <p>Address: 123 Main Street, Karachi</p>
-        </div>
+        <a href="contact.html" class="cta-button">Start Your Project</a>
       </div>
     </section>
   </main>
@@ -134,21 +142,5 @@
     <p class="footer-copy">© 2025 Aluminium Works. All rights reserved.</p>
   </footer>
   <script src="./js/script.js"></script>
-  <script>
-    document.getElementById('submit-contact').addEventListener('click', function() {
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phone: document.getElementById('phone').value,
-        message: document.getElementById('message').value
-      };
-      if (formData.name && formData.email && formData.message) {
-        alert('Form submitted! (Placeholder action)');
-        console.log(formData);
-      } else {
-        alert('Please fill out all required fields.');
-      }
-    });
-  </script>
 </body>
 </html>

@@ -1,146 +1,127 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta
-      name="description"
-      content="Aluminium Works - Professional aluminium fabrication and installation services."
-    />
-    <meta
-      name="keywords"
-      content="aluminium fabrication, aluminium installation, aluminium works"
-    />
-    <meta property="og:title" content="Aluminium Works" />
-    <meta
-      property="og:description"
-      content="Your trusted partner for aluminium fabrication and installation."
-    />
-    <meta property="og:image" content="logo.png" />
-    <meta property="og:url" content="https://www.aluminiumworks.com" />
-    <link rel="icon" type="image/png" href="favicon.png" />
-    <link rel="stylesheet" href="./css/home.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <script src="./js/home.js"></script>
+<script type="text/javascript">
+        var gk_isXlsx = false;
+        var gk_xlsxFileLookup = {};
+        var gk_fileData = {};
+        function filledCell(cell) {
+          return cell !== '' && cell != null;
+        }
+        function loadFileData(filename) {
+        if (gk_isXlsx && gk_xlsxFileLookup[filename]) {
+            try {
+                var workbook = XLSX.read(gk_fileData[filename], { type: 'base64' });
+                var firstSheetName = workbook.SheetNames[0];
+                var worksheet = workbook.Sheets[firstSheetName];
 
-    <title>Aluminium Works</title>
-    <script>
-      // Save as ./js/script.js
-      document
-        .querySelector(".hamburger")
-        .addEventListener("click", function () {
-          this.classList.toggle("active");
-          document.querySelector(".nav-links").classList.toggle("active");
-          const isExpanded = this.getAttribute("aria-expanded") === "true";
-          this.setAttribute("aria-expanded", !isExpanded);
-        });
-    </script>
-  </head>
-  <body>
-    <header class="top-bar">
-      <div class="contact-info">
-        <a href="tel:++92 333 4854858" aria-label="Call +92 333 4854858"
-          >+92 333 4854858</a
-        >
-        |
-        <a href="tel:+92 333 4854858" aria-label="Call +92 333 4854858"
-          >+92 333 4854858</a
-        >
-      </div>
-    </header>
-    <nav class="navbar sticky">
-      <div class="nav-container">
-        <a href="index.html" class="logo">
-          <img
-            src="https://img.freepik.com/premium-vector/black-glossy-geometrical-letter-vector-illustration_95164-3077.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
-            alt="Aluminium Works Logo"
-            width="120"
-          />
-        </a>
-        <button
-          class="hamburger"
-          aria-label="Toggle navigation menu"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-        <ul class="nav-links">
-          <li><a href="index.html" class="active">Home</a></li>
-          <li><a href="about.html">About</a></li>
-          <li><a href="services.html">Services</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
-      </div>
-    </nav>
+                // Convert sheet to JSON to filter blank rows
+                var jsonData = XLSX.utils.sheet_to_json(worksheet, { header: 1, blankrows: false, defval: '' });
+                // Filter out blank rows (rows where all cells are empty, null, or undefined)
+                var filteredData = jsonData.filter(row => row.some(filledCell));
+
+                // Heuristic to find the header row by ignoring rows with fewer filled cells than the next row
+                var headerRowIndex = filteredData.findIndex((row, index) =>
+                  row.filter(filledCell).length >= filteredData[index + 1]?.filter(filledCell).length
+                );
+                // Fallback
+                if (headerRowIndex === -1 || headerRowIndex > 25) {
+                  headerRowIndex = 0;
+                }
+
+                // Convert filtered JSON back to CSV
+                var csv = XLSX.utils.aoa_to_sheet(filteredData.slice(headerRowIndex)); // Create a new sheet from filtered array of arrays
+                csv = XLSX.utils.sheet_to_csv(csv, { header: 1 });
+                return csv;
+            } catch (e) {
+                console.error(e);
+                return "";
+            }
+        }
+        return gk_fileData[filename] || "";
+        }
+        </script><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Aluminium Works - Professional aluminium fabrication and installation services." />
+  <meta name="keywords" content="aluminium fabrication, aluminium installation, aluminium works" />
+  <meta property="og:title" content="Aluminium Works" />
+  <meta property="og:description" content="Your trusted partner for aluminium fabrication and installation." />
+  <meta property="og:image" content="logo.png" />
+  <meta property="og:url" content="https://www.aluminiumworks.com" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./home.css" />
+  <title>Aluminium Works</title>
+</head>
+<body>
+  <header class="top-bar">
+    <div class="contact-info">
+      <a href="tel:+923334854858" aria-label="Call +92 333 4854858">+92 333 4854858</a>
+      <span>|</span>
+      <a href="tel:+923334854858" aria-label="Call +92 333 4854858">+92 333 4854858</a>
+    </div>
+  </header>
+  <nav class="navbar sticky">
+    <div class="nav-container">
+      <a href="index.html" class="logo">
+        <img src="https://img.freepik.com/premium-vector/black-glossy-geometrical-letter-vector-illustration_95164-3077.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Aluminium Works Logo" width="120" />
+      </a>
+      <button class="hamburger" aria-label="Toggle navigation menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="portfolio.html">Portfolio</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+  <main>
     <section class="hero">
       <div class="hero-content">
         <h1>Welcome to Aluminium Works</h1>
-        <p>
-          Your trusted partner for professional aluminium fabrication and
-          installation.
-        </p>
+        <p>Your trusted partner for professional aluminium fabrication and installation.</p>
         <a href="contact.html" class="cta-button">Get Started</a>
       </div>
     </section>
     <section class="about">
       <div class="about-content">
-        <h1>About Us</h1>
-        <p>
-          Aluminium Works is your premier destination for top-quality aluminium
-          fabrication and installation in [Your City]. Specializing in custom
-          aluminium windows, doors, facades, and structures, we deliver durable,
-          stylish solutions for residential, commercial, and industrial
-          projects. With expert craftsmanship, cutting-edge technology, and a
-          focus on customer satisfaction, we transform visions into reality with
-          precision and reliability.
-        </p>
-        <a href="services.html" class="cta-button">Explore More</a>
+        <div>
+          <h2>About Us</h2>
+          <p>
+            Aluminium Works is your premier destination for top-quality aluminium fabrication and installation in Karachi. Specializing in custom aluminium windows, doors, facades, and structures, we deliver durable, stylish solutions for residential, commercial, and industrial projects. With expert craftsmanship, cutting-edge technology, and a focus on customer satisfaction, we transform visions into reality with precision and reliability.
+          </p>
+          <a href="about.html" class="cta-button">Explore More</a>
+        </div>
+        <img src="https://img.freepik.com/premium-photo/factory-workers-assembling-aluminum-pvc-window-frame_1429-33653.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Aluminium Works" />
       </div>
-      <img
-        src="https://img.freepik.com/premium-photo/factory-workers-assembling-aluminum-pvc-window-frame_1429-33653.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
-        alt="aluminium about us"
-      />
     </section>
     <section class="services">
       <div class="services-content">
         <h2>Our Services</h2>
         <div class="services-grid">
           <div class="service-item">
-            <img
-              src="https://img.freepik.com/premium-photo/modern-window-frames-variety-colors-styles_1397692-6445.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
-              alt="Aluminium Windows Icon"
-            />
+            <img src="https://img.freepik.com/premium-photo/modern-window-frames-variety-colors-styles_1397692-6445.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Custom Windows" />
             <h3>Custom Windows</h3>
-            <p>
-              High-quality, energy-efficient aluminium windows tailored to your
-              needs.
-            </p>
+            <p>High-quality, energy-efficient aluminium windows tailored to your needs.</p>
           </div>
           <div class="service-item">
-            <img
-              src="https://img.freepik.com/free-photo/vertical-shot-transparent-doors-commercial-building_181624-21940.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
-              alt="Aluminium Doors Icon"
-            />
+            <img src="https://img.freepik.com/free-photo/vertical-shot-transparent-doors-commercial-building_181624-21940.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Aluminium Doors" />
             <h3>Aluminium Doors</h3>
-            <p>
-              Stylish and durable doors for residential and commercial spaces.
-            </p>
+            <p>Stylish and durable doors for residential and commercial spaces.</p>
+                    <a href="services.html" class="cta-button">Explore All Services</a>
+
           </div>
           <div class="service-item">
-            <img
-              src="https://img.freepik.com/free-photo/casual-male-posing-with-electric-scooter_23-2148779893.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
-              alt="Aluminium Facades Icon"
-            />
+            <img src="https://img.freepik.com/free-photo/casual-male-posing-with-electric-scooter_23-2148779893.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Building Facades" />
             <h3>Building Facades</h3>
             <p>Modern aluminium facades for stunning architectural designs.</p>
           </div>
         </div>
-        <a href="services.html" class="cta-button">Explore All Services</a>
       </div>
     </section>
     <section class="portfolio">
@@ -148,28 +129,20 @@
         <h2>Our Projects</h2>
         <div class="portfolio-grid">
           <div class="portfolio-item">
-            <img
-              src="https://img.freepik.com/free-photo/focused-inspection-expert-with-safety-helmet-checking-quality-windows-walls-construction-site_662251-400.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
-              alt="Modern Aluminium Window Installation"
-            />
+            <img src="https://img.freepik.com/free-photo/focused-inspection-expert-with-safety-helmet-checking-quality-windows-walls-construction-site_662251-400.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Residential Window Installation" />
             <p>Residential Window Installation</p>
           </div>
           <div class="portfolio-item">
-            <img
-              src="https://img.freepik.com/premium-photo/modern-building-entrance_1300347-679.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
-              alt="Commercial Aluminium Facade"
-            />
+            <img src="https://img.freepik.com/premium-photo/modern-building-entrance_1300347-679.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Commercial Building Facade" />
             <p>Commercial Building Facade</p>
+                    <a href="portfolio.html" class="cta-button">View More Projects</a>
+
           </div>
           <div class="portfolio-item">
-            <img
-              src="https://img.freepik.com/free-photo/ai-generated-modern-styled-entryway_23-2150692301.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740"
-              alt="Custom Aluminium Door"
-            />
+            <img src="https://img.freepik.com/free-photo/ai-generated-modern-styled-entryway_23-2150692301.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Custom Aluminium Doors" />
             <p>Custom Aluminium Doors</p>
           </div>
         </div>
-        <a href="portfolio.html" class="cta-button">View More Projects</a>
       </div>
     </section>
     <section class="testimonials">
@@ -177,17 +150,11 @@
         <h2>What Our Clients Say</h2>
         <div class="testimonials-grid">
           <div class="testimonial-item">
-            <p>
-              "Aluminium Works transformed our home with stunning windows.
-              Professional and reliable!"
-            </p>
-            <h4>- Sarah, Homeowner in [Your City]</h4>
+            <p>"Aluminium Works transformed our home with stunning windows. Professional and reliable!"</p>
+            <h4>- Sarah, Homeowner in Karachi</h4>
           </div>
           <div class="testimonial-item">
-            <p>
-              "Their aluminium facades elevated our commercial building. Highly
-              recommend!"
-            </p>
+            <p>"Their aluminium facades elevated our commercial building. Highly recommend!"</p>
             <h4>- John, Business Owner</h4>
           </div>
         </div>
@@ -196,39 +163,34 @@
     <section class="contact-cta">
       <div class="contact-content">
         <h2>Ready to Start Your Project?</h2>
-        <p>
-          Contact us today for a free quote on your aluminium fabrication needs.
-        </p>
+        <p>Contact us today for a free quote on your aluminium fabrication needs.</p>
         <a href="contact.html" class="cta-button">Get in Touch</a>
       </div>
     </section>
-    <footer class="footer">
-      <div class="footer-content">
-        <div class="footer-contact">
-          <h3>Contact Us</h3>
-          <p>
-            <a href="tel:+92 333 4854858">+92 333 4854858</a> |
-            <a href="tel:+92 333 4854858">92 333 4854858</a>
-          </p>
-          <p>
-            Email:
-            <a href="mailto:info@aluminiumworks.com">info@aluminiumworks.com</a>
-          </p>
-        </div>
-        <div class="footer-links">
-          <h3>Quick Links</h3>
-          <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="about.html">About</a></li>
-            <li><a href="services.html">Services</a></li>
-            <li><a href="contact.html">Contact</a></li>
-          </ul>
-        </div>
+  </main>
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p>
+          <a href="tel:+923334854858">+92 333 4854858</a> |
+          <a href="tel:+923334854858">+92 333 4854858</a>
+        </p>
+        <p>Email: <a href="mailto:info@aluminiumworks.com">info@aluminiumworks.com</a></p>
       </div>
-      <p class="footer-copy">
-        &copy; 2025 Aluminium Works. All rights reserved.
-      </p>
-    </footer>
-    <script src="./js/script.js"></script>
-  </body>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="portfolio.html">Portfolio</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <p class="footer-copy">© 2025 Aluminium Works. All rights reserved.</p>
+  </footer>
+  <script src="./js/script.js"></script>
+</body>
 </html>

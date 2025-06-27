@@ -81,31 +81,135 @@
     </div>
   </nav>
   <main>
-    <section class="services">
+    <!-- Services Intro Section -->
+    <section class="services-intro" style="background: #f3f4f6; padding: 2rem 0;">
+      <div class="services-content" style="max-width:1200px;margin:0 auto;text-align:center;">
+        <h1 style="font-size:2.5rem;margin-bottom:1rem;">Our Aluminium Services</h1>
+        <p style="font-size:1.2rem;max-width:700px;margin:0 auto 2rem;">
+          Discover a full spectrum of aluminium solutions for residential, commercial, and industrial needs. We combine innovation, quality, and craftsmanship to deliver results that last.
+        </p>
+        <div style="display:flex;justify-content:center;gap:2rem;flex-wrap:wrap;">
+          <div style="flex:1;min-width:200px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/3062/3062634.png" alt="Quality" style="width:48px;height:48px;margin-bottom:0.5rem;">
+            <h3>Premium Quality</h3>
+            <p style="font-size:0.95rem;">Only the best materials and finishes for every project.</p>
+          </div>
+          <div style="flex:1;min-width:200px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/1828/1828919.png" alt="Customization" style="width:48px;height:48px;margin-bottom:0.5rem;">
+            <h3>Customization</h3>
+            <p style="font-size:0.95rem;">Tailored designs to match your vision and requirements.</p>
+          </div>
+          <div style="flex:1;min-width:200px;">
+            <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Support" style="width:48px;height:48px;margin-bottom:0.5rem;">
+            <h3>Expert Support</h3>
+            <p style="font-size:0.95rem;">Guidance from consultation to installation and beyond.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Main Services Section -->
+    <section class="services" style="background:#fff;">
       <div class="services-content">
         <h2>Our Services</h2>
         <p>
           At Aluminium Works, we offer a comprehensive range of aluminium fabrication and installation services tailored to meet your needs. Explore our offerings below.
         </p>
         <div class="services-grid">
-          <div class="service-item">
+          <!-- Service 1 -->
+          <div class="service-item" style="position:relative;">
             <img src="https://img.freepik.com/premium-photo/modern-window-frames-variety-colors-styles_1397692-6445.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Custom Windows" />
-            <h3>Custom Windows</h3>
-            <p>Our energy-efficient aluminium windows are designed to enhance your space with style and durability. Available in various finishes and sizes to suit any project.</p>
-            <a href="contact.html" class="cta-button">Request a Quote</a>
+            <h3>Custom Aluminium Windows</h3>
+            <ul style="text-align:left;font-size:0.98rem;margin-bottom:1rem;">
+              <li>Energy-efficient double/triple glazing</li>
+              <li>Modern and classic frame styles</li>
+              <li>Noise reduction & weatherproofing</li>
+              <li>Wide range of colors and finishes</li>
+            </ul>
+            <button class="cta-button" onclick="showModal('windows')">Learn More</button>
+            <a href="contact.html" class="cta-button" style="margin-top:0.5rem;">Request a Quote</a>
           </div>
-          <div class="service-item">
+          <!-- Service 2 -->
+          <div class="service-item" style="position:relative;">
             <img src="https://img.freepik.com/free-photo/vertical-shot-transparent-doors-commercial-building_181624-21940.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Aluminium Doors" />
             <h3>Aluminium Doors</h3>
-            <p>From sleek residential entrances to robust commercial doors, our aluminium doors combine security, aesthetics, and longevity.</p>
-            <a href="contact.html" class="cta-button">Request a Quote</a>
+            <ul style="text-align:left;font-size:0.98rem;margin-bottom:1rem;">
+              <li>Sliding, folding, and hinged options</li>
+              <li>High-security locking systems</li>
+              <li>Thermal insulation & weather seals</li>
+              <li>Custom glass and panel inserts</li>
+            </ul>
+            <button class="cta-button" onclick="showModal('doors')">Learn More</button>
+            <a href="contact.html" class="cta-button" style="margin-top:0.5rem;">Request a Quote</a>
           </div>
-          <div class="service-item">
+          <!-- Service 3 -->
+          <div class="service-item" style="position:relative;">
             <img src="https://img.freepik.com/free-photo/casual-male-posing-with-electric-scooter_23-2148779893.jpg?ga=GA1.1.860952126.1749829977&semt=ais_hybrid&w=740" alt="Building Facades" />
-            <h3>Building Facades</h3>
-            <p>Transform your building with our modern aluminium facades, designed for architectural brilliance and weather resistance.</p>
-            <a href="contact.html" class="cta-button">Request a Quote</a>
+            <h3>Architectural Facades</h3>
+            <ul style="text-align:left;font-size:0.98rem;margin-bottom:1rem;">
+              <li>Modern curtain wall systems</li>
+              <li>Custom geometric patterns</li>
+              <li>Integrated lighting options</li>
+              <li>Weather and corrosion resistant</li>
+            </ul>
+            <button class="cta-button" onclick="showModal('facades')">Learn More</button>
+            <a href="contact.html" class="cta-button" style="margin-top:0.5rem;">Request a Quote</a>
           </div>
+        </div>
+      </div>
+    </section>
+    <!-- Modal Popups for Service Details -->
+    <div id="modal-bg" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.5);z-index:2000;" onclick="hideModal()"></div>
+    <div id="modal-windows" class="service-modal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem;max-width:400px;z-index:2001;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+      <h2>Custom Aluminium Windows</h2>
+      <p>Our windows are engineered for performance and style. Choose from a variety of opening types, glass options, and finishes. All installations are handled by certified professionals.</p>
+      <ul>
+        <li>Double/triple glazing for insulation</li>
+        <li>Child safety locks available</li>
+        <li>10-year warranty on frames</li>
+      </ul>
+      <button class="cta-button" onclick="hideModal()">Close</button>
+    </div>
+    <div id="modal-doors" class="service-modal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem;max-width:400px;z-index:2001;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+      <h2>Aluminium Doors</h2>
+      <p>Our doors are designed for security and elegance. We offer a range of styles, including bi-fold, sliding, and French doors, all with advanced locking and weatherproofing.</p>
+      <ul>
+        <li>Custom handles and finishes</li>
+        <li>Smart lock integration available</li>
+        <li>5-year warranty on moving parts</li>
+      </ul>
+      <button class="cta-button" onclick="hideModal()">Close</button>
+    </div>
+    <div id="modal-facades" class="service-modal" style="display:none;position:fixed;top:50%;left:50%;transform:translate(-50%,-50%);background:#fff;padding:2rem;max-width:400px;z-index:2001;border-radius:12px;box-shadow:0 8px 32px rgba(0,0,0,0.2);">
+      <h2>Architectural Facades</h2>
+      <p>Transform your building with our bespoke facade solutions. We use the latest technology and materials to create visually stunning and durable exteriors.</p>
+      <ul>
+        <li>Custom patterns and branding</li>
+        <li>Integrated LED lighting</li>
+        <li>Maintenance contracts available</li>
+      </ul>
+      <button class="cta-button" onclick="hideModal()">Close</button>
+    </div>
+    <!-- FAQ Section -->
+    <section class="faq" style="background:#f3f4f6;padding:2rem 0;">
+      <div class="services-content" style="max-width:900px;margin:0 auto;">
+        <h2 style="text-align:center;">Frequently Asked Questions</h2>
+        <div style="margin-top:2rem;">
+          <details style="margin-bottom:1rem;">
+            <summary style="font-weight:600;cursor:pointer;">How long does installation take?</summary>
+            <p style="margin-top:0.5rem;">Most projects are completed within 1-2 weeks, depending on size and complexity. We provide a detailed timeline after your consultation.</p>
+          </details>
+          <details style="margin-bottom:1rem;">
+            <summary style="font-weight:600;cursor:pointer;">Do you offer warranties?</summary>
+            <p style="margin-top:0.5rem;">Yes, all our products come with manufacturer and installation warranties. Details vary by product type.</p>
+          </details>
+          <details style="margin-bottom:1rem;">
+            <summary style="font-weight:600;cursor:pointer;">Can I customize the color and style?</summary>
+            <p style="margin-top:0.5rem;">Absolutely! We offer a wide range of colors, finishes, and design options to match your preferences.</p>
+          </details>
+          <details>
+            <summary style="font-weight:600;cursor:pointer;">How do I get a quote?</summary>
+            <p style="margin-top:0.5rem;">Simply <a href="contact.html">contact us</a> with your requirements, and our team will provide a free, no-obligation quote.</p>
+          </details>
         </div>
       </div>
     </section>
@@ -134,5 +238,18 @@
     <p class="footer-copy">© 2025 Aluminium Works. All rights reserved.</p>
   </footer>
   <script src="./js/script.js"></script>
+  <script>
+    // Modal logic for service details
+    function showModal(type) {
+      document.getElementById('modal-bg').style.display = 'block';
+      document.getElementById('modal-' + type).style.display = 'block';
+    }
+    function hideModal() {
+      document.getElementById('modal-bg').style.display = 'none';
+      document.querySelectorAll('.service-modal').forEach(function(modal) {
+        modal.style.display = 'none';
+      });
+    }
+  </script>
 </body>
 </html>
